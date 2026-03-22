@@ -176,6 +176,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 /* ── FOOTER ──────────────────────────────────────────────────────────── */
 .cf{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;font-size:11px;letter-spacing:.04em;padding:13px 28px;line-height:1.8}
 .cf strong{color:#F5A623}
+
+/* ── GITHUB CARD ──────────────────────────────────────────────────────── */
+.gh-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:16px 20px;display:flex;align-items:center;gap:16px;
+  max-width:840px;margin:0 auto 24px;
+  transition:box-shadow .2s,border-color .2s,background .3s;
+  text-decoration:none;
+}
+.gh-card:hover{box-shadow:0 6px 24px rgba(13,27,62,.12);border-color:#90AEE0;}
+.gh-avatar{width:52px;height:52px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;object-fit:cover;}
+.gh-info{flex:1;min-width:0}
+.gh-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--text);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gh-name svg{flex-shrink:0}
+.gh-handle{font-size:12px;color:var(--gray);margin-top:2px}
+.gh-stats{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+.gh-stat{font-size:11px;color:var(--subtext);display:flex;align-items:center;gap:3px;font-weight:500}
+.gh-stat strong{color:var(--text);font-family:'Syne',sans-serif;font-size:11px}
+.gh-badges{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.gh-badge{background:var(--light);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:10px;font-weight:600;color:var(--subtext);letter-spacing:.04em}
+.gh-arrow{color:var(--gray);font-size:18px;flex-shrink:0}
+[data-theme="dark"] .gh-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.3);}
+
 @media(max-width:640px){
   .cb{font-size:10px;padding:5px 12px}.con{padding:16px 10px 40px}
   #tb{padding:7px 10px;gap:6px}#nav-panel{width:100%}
@@ -236,6 +259,35 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 <!-- MAIN -->
 <main class="con">
+
+  <!-- GITHUB PROFILE CARD -->
+  <a class="gh-card" href="https://github.com/Ceddrickx" target="_blank" rel="noopener">
+    <img class="gh-avatar"
+      src="data:image/jpeg;base64,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"
+      alt="Ceddrickx GitHub Avatar"
+      />
+    <div class="gh-info">
+      <div class="gh-name">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color:var(--text)"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Ceddrickx
+        <span style="font-size:10px;font-weight:600;background:rgba(13,27,62,.08);color:var(--navy);border-radius:12px;padding:1px 8px;letter-spacing:.06em;text-transform:uppercase;">Creator</span>
+      </div>
+      <div class="gh-handle">@Ceddrickx &nbsp;·&nbsp; he/him &nbsp;·&nbsp; 📍 Philippines &nbsp;·&nbsp; 📸 @cdrck_vllr</div>
+      <div class="gh-stats">
+        <span class="gh-stat"><strong>11</strong>&nbsp;Repositories</span>
+        <span class="gh-stat"><strong>4</strong>&nbsp;Followers</span>
+        <span class="gh-stat"><strong>5</strong>&nbsp;Following</span><span class="gh-stat"><strong>126</strong>&nbsp;Contributions</span>
+      </div>
+      <div class="gh-badges">
+        <span class="gh-badge">🦈 Pull Shark</span>
+        <span class="gh-badge">🎰 YOLO</span>
+        <span class="gh-badge">BSIT · IT-252</span>
+        <span class="gh-badge">National University – Fairview</span>
+      </div>
+    </div>
+    <span class="gh-arrow">&#8599;</span>
+  </a>
+
   <!-- SCORE BANNER -->
   <div id="scb">
     <h2>Exam Complete!</h2>
